@@ -68,7 +68,7 @@ Population::Population(const Genome& a_Seed, const Parameters& a_Parameters,
         m_Genomes.push_back( t_clone );
     }
 
-    // Now now initialize each genome's weights
+    // Now initialize each genome's weights
     for(unsigned int i=0; i<m_Genomes.size(); i++)
     {
         if (a_RandomizeWeights)
@@ -245,7 +245,7 @@ void Population::CalculateMPC()
 
 
 // Separates the population into species
-// also adjusts the compatibility treshold if this feature is enabled
+// also adjusts the compatibility threshold if this feature is enabled
 void Population::Speciate()
 {
     // iterate through the genome list and speciate
@@ -518,15 +518,15 @@ void Population::Epoch()
         {
             if (m_Species.size() > m_Parameters.MaxSpecies)
             {
-                m_Parameters.CompatTreshold += m_Parameters.CompatTresholdModifier;
+                m_Parameters.CompatThreshold += m_Parameters.CompatThresholdModifier;
             }
             else if (m_Species.size() < m_Parameters.MinSpecies)
             {
-                m_Parameters.CompatTreshold -= m_Parameters.CompatTresholdModifier;
+                m_Parameters.CompatThreshold -= m_Parameters.CompatThresholdModifier;
             }
         }
 
-        if (m_Parameters.CompatTreshold < m_Parameters.MinCompatTreshold) m_Parameters.CompatTreshold = m_Parameters.MinCompatTreshold;
+        if (m_Parameters.CompatThreshold < m_Parameters.MinCompatThreshold) m_Parameters.CompatThreshold = m_Parameters.MinCompatThreshold;
     }
 
 
@@ -604,10 +604,10 @@ void Population::Epoch()
         if (m_SearchMode == COMPLEXIFYING)
         {
             // Need to begin simplification?
-            if (m_CurrentMPC > (m_BaseMPC + m_Parameters.SimplifyingPhaseMPCTreshold))
+            if (m_CurrentMPC > (m_BaseMPC + m_Parameters.SimplifyingPhaseMPCThreshold))
             {
                 // Do this only if the whole population is stagnating
-                if (m_GensSinceBestFitnessLastChanged > m_Parameters.SimplifyingPhaseStagnationTreshold)
+                if (m_GensSinceBestFitnessLastChanged > m_Parameters.SimplifyingPhaseStagnationThreshold)
                 {
                     // Change the current search mode
                     m_SearchMode = SIMPLIFYING;
@@ -978,7 +978,7 @@ Genome* Population::Tick(Genome& a_deleted_genome)
     }
 
 
-    // adjust the compatibility treshold
+    // adjust the compatibility threshold
     bool t_changed = false;
     if (m_Parameters.DynamicCompatibility == true)
     {
@@ -986,20 +986,20 @@ Genome* Population::Tick(Genome& a_deleted_genome)
         {
             if (m_Species.size() > m_Parameters.MaxSpecies)
             {
-                m_Parameters.CompatTreshold += m_Parameters.CompatTresholdModifier;
+                m_Parameters.CompatThreshold += m_Parameters.CompatThresholdModifier;
                 t_changed = true;
             }
             else if (m_Species.size() < m_Parameters.MinSpecies)
             {
-                m_Parameters.CompatTreshold -= m_Parameters.CompatTresholdModifier;
+                m_Parameters.CompatThreshold -= m_Parameters.CompatThresholdModifier;
                 t_changed = true;
             }
 
-            if (m_Parameters.CompatTreshold < m_Parameters.MinCompatTreshold) m_Parameters.CompatTreshold = m_Parameters.MinCompatTreshold;
+            if (m_Parameters.CompatThreshold < m_Parameters.MinCompatThreshold) m_Parameters.CompatThreshold = m_Parameters.MinCompatThreshold;
         }
     }
 
-    // If the compatibility treshold was changed, reassign all individuals by species
+    // If the compatibility threshold was changed, reassign all individuals by species
     if (t_changed)
     {
         for(unsigned int i=0; i<m_Genomes.size(); i++)
@@ -1282,7 +1282,7 @@ bool Population::NoveltySearchTick(Genome& a_SuccessfulGenome)
     if (m_Parameters.NoveltySearch_Dynamic_Pmin)
     {
         // too many generations without adding to the archive?
-        if (m_GensSinceLastArchiving > m_Parameters.NoveltySearch_No_Archiving_Stagnation_Treshold)
+        if (m_GensSinceLastArchiving > m_Parameters.NoveltySearch_No_Archiving_Stagnation_Threshold)
         {
             m_Parameters.NoveltySearch_P_min *= m_Parameters.NoveltySearch_Pmin_lowering_multiplier;
             if (m_Parameters.NoveltySearch_P_min < m_Parameters.NoveltySearch_Pmin_min)

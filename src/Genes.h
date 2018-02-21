@@ -76,7 +76,7 @@ namespace NEAT
         UNSIGNED_SIGMOID,
         TANH,
         TANH_CUBIC,
-        SIGNED_STEP,          // Treshold (0 or 1)  (cutting plane)
+        SIGNED_STEP,          // Threshold (0 or 1)  (cutting plane)
         UNSIGNED_STEP,
         SIGNED_GAUSS,         // Gaussian           (symettry)
         UNSIGNED_GAUSS,

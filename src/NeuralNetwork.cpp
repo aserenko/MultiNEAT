@@ -23,7 +23,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
-// File:        Phenotype.cpp
+// File:        NeuralNetwork.cpp
 // Description: Implementation of the phenotype activation functions.
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -691,7 +691,7 @@ void NeuralNetwork::Adapt(Parameters& a_Parameters)
         }
         else if (m_connections[i].m_weight < 0) // negative weight
         {
-            // In the inhibatory case, we strengthen the synapse when output is low and
+            // In the inhibitory case, we strengthen the synapse when output is low and
             // input is high
             double t_delta = m_connections[i].m_hebb_pre_rate
                     * (t_max_weight - m_connections[i].m_weight)

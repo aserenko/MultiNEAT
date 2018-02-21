@@ -65,7 +65,7 @@ namespace NEAT
         // Allow clones or nearly identical genomes to exist simultaneously in the population.
         // This is useful for non-deterministic environments,
         // as the same individual will get more than one chance to prove himself, also
-        // there will be more chances the same individual to mutate in different ways.
+        // there will be more chances for the same individual to mutate in different ways.
         // The drawback is greatly increased time for reproduction. If you want to
         // search quickly, yet less efficient, leave this to true.
         AllowClones = true;
@@ -90,8 +90,8 @@ namespace NEAT
         // GA Parameters
         ////////////////////////////////
 
-        // AgeGens treshold, meaning if a species is below it, it is considered young
-        YoungAgeTreshold = 5;
+        // AgeGens threshold, meaning if a species is below it, it is considered young
+        YoungAgeThreshold = 5;
 
         // Fitness boost multiplier for young species (1.0 means no boost)
         // Make sure it is >= 1.0 to avoid confusion
@@ -105,15 +105,15 @@ namespace NEAT
         StagnationDelta = 0.0;
 
         // AgeGens threshold, meaning if a species is above it, it is considered old
-        OldAgeTreshold = 30;
+        OldAgeThreshold = 30;
 
         // Multiplier that penalizes old species.
         // Make sure it is <= 1.0 to avoid confusion.
         OldAgePenalty = 0.5;
 
-        // Detect competetive coevolution stagnation
+        // Detect competitive coevolution stagnation
         // This kills the worst species of age >N (each X generations)
-        DetectCompetetiveCoevolutionStagnation = false;
+        DetectCompetitiveCoevolutionStagnation = false;
         // Each X generation..
         KillWorstSpeciesEach = 15;
         // Of age above..
@@ -161,10 +161,10 @@ namespace NEAT
         DeltaCoding = false;
 
         // What is the MPC + base MPC needed to begin simplifying phase
-        SimplifyingPhaseMPCTreshold = 20;
+        SimplifyingPhaseMPCThreshold = 20;
 
         // How many generations of global stagnation should have passed to enter simplifying phase
-        SimplifyingPhaseStagnationTreshold = 30;
+        SimplifyingPhaseStagnationThreshold = 30;
 
         // How many generations of MPC stagnation are needed to turn back on complexifying
         ComplexityFloorGenerations = 40;
@@ -181,7 +181,7 @@ namespace NEAT
         // the K constant
         NoveltySearch_K = 15;
 
-        // Sparseness treshold. Add to the archive if above
+        // Sparseness threshold. Add to the archive if above
         NoveltySearch_P_min = 0.5;
 
         // Dynamic Pmin?
@@ -189,7 +189,7 @@ namespace NEAT
 
         // How many evaluations should pass without adding to the archive
         // in order to lower Pmin
-        NoveltySearch_No_Archiving_Stagnation_Treshold = 150;
+        NoveltySearch_No_Archiving_Stagnation_Threshold = 150;
 
         // How should it be multiplied (make it less than 1.0)
         NoveltySearch_Pmin_lowering_multiplier = 0.9;
@@ -399,20 +399,20 @@ namespace NEAT
         // Activation function type difference importance
         ActivationFunctionDiffCoeff = 0.0;
 
-        // Compatibility treshold
-        CompatTreshold = 5.0;
+        // Compatibility threshold
+        CompatThreshold = 5.0;
 
-        // Minumal value of the compatibility treshold
-        MinCompatTreshold = 0.2;
+        // Minumal value of the compatibility threshold
+        MinCompatThreshold = 0.2;
 
         // Modifier per generation for keeping the species stable
-        CompatTresholdModifier = 0.3;
+        CompatThresholdModifier = 0.3;
 
-        // Per how many generations to change the treshold
+        // Per how many generations to change the threshold
         // (used in generational mode)
         CompatTreshChangeInterval_Generations = 1;
 
-        // Per how many evaluations to change the treshold
+        // Per how many evaluations to change the threshold
         // (used in steady state mode)
         CompatTreshChangeInterval_Evaluations = 10;
 
@@ -426,7 +426,7 @@ namespace NEAT
 
         VarianceThreshold = 0.03;
 
-        // Used for Band prunning.
+        // Used for Band pruning.
         BandThreshold = 0.3;
 
         // Max and Min Depths of the quadtree
@@ -529,8 +529,8 @@ namespace NEAT
             }
     
     
-            if (s == "YoungAgeTreshold")
-                a_DataFile >> YoungAgeTreshold;
+            if (s == "YoungAgeThreshold")
+                a_DataFile >> YoungAgeThreshold;
 
             if (s == "YoungAgeFitnessBoost")
                 a_DataFile >> YoungAgeFitnessBoost;
@@ -541,19 +541,19 @@ namespace NEAT
             if (s == "StagnationDelta")
                 a_DataFile >> StagnationDelta;
 
-            if (s == "OldAgeTreshold")
-                a_DataFile >> OldAgeTreshold;
+            if (s == "OldAgeThreshold")
+                a_DataFile >> OldAgeThreshold;
 
             if (s == "OldAgePenalty")
                 a_DataFile >> OldAgePenalty;
 
-            if (s == "DetectCompetetiveCoevolutionStagnation")
+            if (s == "DetectCompetitiveCoevolutionStagnation")
             {
                 a_DataFile >> tf;
                 if (tf == "true" || tf == "1" || tf == "1.0")
-                    DetectCompetetiveCoevolutionStagnation = true;
+                    DetectCompetitiveCoevolutionStagnation = true;
                 else
-                    DetectCompetetiveCoevolutionStagnation = false;
+                    DetectCompetitiveCoevolutionStagnation = false;
             }
 
             if (s == "KillWorstSpeciesEach")
@@ -604,11 +604,11 @@ namespace NEAT
                     DeltaCoding = false;
             }
 
-            if (s == "SimplifyingPhaseMPCTreshold")
-                a_DataFile >> SimplifyingPhaseMPCTreshold;
+            if (s == "SimplifyingPhaseMPCThreshold")
+                a_DataFile >> SimplifyingPhaseMPCThreshold;
 
-            if (s == "SimplifyingPhaseStagnationTreshold")
-                a_DataFile >> SimplifyingPhaseStagnationTreshold;
+            if (s == "SimplifyingPhaseStagnationThreshold")
+                a_DataFile >> SimplifyingPhaseStagnationThreshold;
 
             if (s == "ComplexityFloorGenerations")
                 a_DataFile >> ComplexityFloorGenerations;
@@ -628,8 +628,8 @@ namespace NEAT
                     NoveltySearch_Dynamic_Pmin = false;
             }
 
-            if (s == "NoveltySearch_No_Archiving_Stagnation_Treshold")
-                a_DataFile >> NoveltySearch_No_Archiving_Stagnation_Treshold;
+            if (s == "NoveltySearch_No_Archiving_Stagnation_Threshold")
+                a_DataFile >> NoveltySearch_No_Archiving_Stagnation_Threshold;
 
             if (s == "NoveltySearch_Pmin_lowering_multiplier")
                 a_DataFile >> NoveltySearch_Pmin_lowering_multiplier;
@@ -840,14 +840,14 @@ namespace NEAT
             if (s == "ActivationFunctionDiffCoeff")
                 a_DataFile >> ActivationFunctionDiffCoeff;
 
-            if (s == "CompatTreshold")
-                a_DataFile >> CompatTreshold;
+            if (s == "CompatThreshold")
+                a_DataFile >> CompatThreshold;
 
-            if (s == "MinCompatTreshold")
-                a_DataFile >> MinCompatTreshold;
+            if (s == "MinCompatThreshold")
+                a_DataFile >> MinCompatThreshold;
 
-            if (s == "CompatTresholdModifier")
-                a_DataFile >> CompatTresholdModifier;
+            if (s == "CompatThresholdModifier")
+                a_DataFile >> CompatThresholdModifier;
 
             if (s == "CompatTreshChangeInterval_Generations")
                 a_DataFile >> CompatTreshChangeInterval_Generations;
@@ -959,14 +959,14 @@ namespace NEAT
         fprintf(a_fstream, "InnovationsForever %s\n", InnovationsForever == true ? "true" : "false");
         fprintf(a_fstream, "AllowClones %s\n", AllowClones == true ? "true" : "false");
         fprintf(a_fstream, "NormalizeGenomeSize %s\n", NormalizeGenomeSize == true ? "true" : "false");
-        fprintf(a_fstream, "YoungAgeTreshold %d\n", YoungAgeTreshold);
+        fprintf(a_fstream, "YoungAgeThreshold %d\n", YoungAgeThreshold);
         fprintf(a_fstream, "YoungAgeFitnessBoost %3.20f\n", YoungAgeFitnessBoost);
         fprintf(a_fstream, "SpeciesDropoffAge %d\n", SpeciesMaxStagnation);
         fprintf(a_fstream, "StagnationDelta %3.20f\n", StagnationDelta);
-        fprintf(a_fstream, "OldAgeTreshold %d\n", OldAgeTreshold);
+        fprintf(a_fstream, "OldAgeThreshold %d\n", OldAgeThreshold);
         fprintf(a_fstream, "OldAgePenalty %3.20f\n", OldAgePenalty);
-        fprintf(a_fstream, "DetectCompetetiveCoevolutionStagnation %s\n",
-                DetectCompetetiveCoevolutionStagnation == true ? "true" : "false");
+        fprintf(a_fstream, "DetectCompetitiveCoevolutionStagnation %s\n",
+                DetectCompetitiveCoevolutionStagnation == true ? "true" : "false");
         fprintf(a_fstream, "KillWorstSpeciesEach %d\n", KillWorstSpeciesEach);
         fprintf(a_fstream, "KillWorstAge %d\n", KillWorstAge);
         fprintf(a_fstream, "SurvivalRate %3.20f\n", SurvivalRate);
@@ -977,14 +977,14 @@ namespace NEAT
         fprintf(a_fstream, "RouletteWheelSelection %s\n", RouletteWheelSelection == true ? "true" : "false");
         fprintf(a_fstream, "PhasedSearching %s\n", PhasedSearching == true ? "true" : "false");
         fprintf(a_fstream, "DeltaCoding %s\n", DeltaCoding == true ? "true" : "false");
-        fprintf(a_fstream, "SimplifyingPhaseMPCTreshold %d\n", SimplifyingPhaseMPCTreshold);
-        fprintf(a_fstream, "SimplifyingPhaseStagnationTreshold %d\n", SimplifyingPhaseStagnationTreshold);
+        fprintf(a_fstream, "SimplifyingPhaseMPCThreshold %d\n", SimplifyingPhaseMPCThreshold);
+        fprintf(a_fstream, "SimplifyingPhaseStagnationThreshold %d\n", SimplifyingPhaseStagnationThreshold);
         fprintf(a_fstream, "ComplexityFloorGenerations %d\n", ComplexityFloorGenerations);
         fprintf(a_fstream, "NoveltySearch_K %d\n", NoveltySearch_K);
         fprintf(a_fstream, "NoveltySearch_P_min %3.20f\n", NoveltySearch_P_min);
         fprintf(a_fstream, "NoveltySearch_Dynamic_Pmin %s\n", NoveltySearch_Dynamic_Pmin == true ? "true" : "false");
-        fprintf(a_fstream, "NoveltySearch_No_Archiving_Stagnation_Treshold %d\n",
-                NoveltySearch_No_Archiving_Stagnation_Treshold);
+        fprintf(a_fstream, "NoveltySearch_No_Archiving_Stagnation_Threshold %d\n",
+                NoveltySearch_No_Archiving_Stagnation_Threshold);
         fprintf(a_fstream, "NoveltySearch_Pmin_lowering_multiplier %3.20f\n", NoveltySearch_Pmin_lowering_multiplier);
         fprintf(a_fstream, "NoveltySearch_Pmin_min %3.20f\n", NoveltySearch_Pmin_min);
         fprintf(a_fstream, "NoveltySearch_Quick_Archiving_Min_Evaluations %d\n",
@@ -1051,9 +1051,9 @@ namespace NEAT
         fprintf(a_fstream, "TimeConstantDiffCoeff %3.20f\n", TimeConstantDiffCoeff);
         fprintf(a_fstream, "BiasDiffCoeff %3.20f\n", BiasDiffCoeff);
         fprintf(a_fstream, "ActivationFunctionDiffCoeff %3.20f\n", ActivationFunctionDiffCoeff);
-        fprintf(a_fstream, "CompatTreshold %3.20f\n", CompatTreshold);
-        fprintf(a_fstream, "MinCompatTreshold %3.20f\n", MinCompatTreshold);
-        fprintf(a_fstream, "CompatTresholdModifier %3.20f\n", CompatTresholdModifier);
+        fprintf(a_fstream, "CompatThreshold %3.20f\n", CompatThreshold);
+        fprintf(a_fstream, "MinCompatThreshold %3.20f\n", MinCompatThreshold);
+        fprintf(a_fstream, "CompatThresholdModifier %3.20f\n", CompatThresholdModifier);
         fprintf(a_fstream, "CompatTreshChangeInterval_Generations %d\n", CompatTreshChangeInterval_Generations);
         fprintf(a_fstream, "CompatTreshChangeInterval_Evaluations %d\n", CompatTreshChangeInterval_Evaluations);
 

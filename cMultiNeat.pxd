@@ -77,13 +77,13 @@ cdef extern from "src/Parameters.h" namespace "NEAT":
         unsigned int MaxSpecies
         bool InnovationsForever
         bool AllowClones
-        unsigned int YoungAgeTreshold
+        unsigned int YoungAgeThreshold
         double YoungAgeFitnessBoost
         unsigned int SpeciesMaxStagnation
         double StagnationDelta
-        unsigned int OldAgeTreshold
+        unsigned int OldAgeThreshold
         double OldAgePenalty
-        bool DetectCompetetiveCoevolutionStagnation
+        bool DetectCompetitiveCoevolutionStagnation
         int KillWorstSpeciesEach
         int KillWorstAge
         double SurvivalRate
@@ -94,13 +94,13 @@ cdef extern from "src/Parameters.h" namespace "NEAT":
         bool RouletteWheelSelection
         bool PhasedSearching
         bool DeltaCoding
-        unsigned int SimplifyingPhaseMPCTreshold
-        unsigned int SimplifyingPhaseStagnationTreshold
+        unsigned int SimplifyingPhaseMPCThreshold
+        unsigned int SimplifyingPhaseStagnationThreshold
         unsigned int ComplexityFloorGenerations
         unsigned int NoveltySearch_K
         double NoveltySearch_P_min
         bool NoveltySearch_Dynamic_Pmin
-        unsigned int NoveltySearch_No_Archiving_Stagnation_Treshold
+        unsigned int NoveltySearch_No_Archiving_Stagnation_Threshold
         double NoveltySearch_Pmin_lowering_multiplier
         double NoveltySearch_Pmin_min
         unsigned int NoveltySearch_Quick_Archiving_Min_Evaluations
@@ -164,9 +164,9 @@ cdef extern from "src/Parameters.h" namespace "NEAT":
         double TimeConstantDiffCoeff
         double BiasDiffCoeff
         double ActivationFunctionDiffCoeff
-        double CompatTreshold
-        double MinCompatTreshold
-        double CompatTresholdModifier
+        double CompatThreshold
+        double MinCompatThreshold
+        double CompatThresholdModifier
         unsigned int CompatTreshChangeInterval_Generations
         unsigned int CompatTreshChangeInterval_Evaluations
 
@@ -187,7 +187,7 @@ cdef extern from "src/Parameters.h" namespace "NEAT":
 
         double VarianceThreshold
 
-        # Used for Band prunning.
+        # Used for Band pruning.
         double BandThreshold
 
         # Max and Min Depths of the quadtree

@@ -88,9 +88,9 @@ cdef class Parameters:
         def __get__(self): return self.thisptr.AllowClones
         def __set__(self, AllowClones): self.thisptr.AllowClones = AllowClones
         
-    property YoungAgeTreshold:
-        def __get__(self): return self.thisptr.YoungAgeTreshold
-        def __set__(self, YoungAgeTreshold): self.thisptr.YoungAgeTreshold = YoungAgeTreshold
+    property YoungAgeThreshold:
+        def __get__(self): return self.thisptr.YoungAgeThreshold
+        def __set__(self, YoungAgeThreshold): self.thisptr.YoungAgeThreshold = YoungAgeThreshold
         
     property YoungAgeFitnessBoost:
         def __get__(self): return self.thisptr.YoungAgeFitnessBoost
@@ -104,17 +104,17 @@ cdef class Parameters:
         def __get__(self): return self.thisptr.StagnationDelta
         def __set__(self, StagnationDelta): self.thisptr.StagnationDelta = StagnationDelta
         
-    property OldAgeTreshold:
-        def __get__(self): return self.thisptr.OldAgeTreshold
-        def __set__(self, OldAgeTreshold): self.thisptr.OldAgeTreshold = OldAgeTreshold
+    property OldAgeThreshold:
+        def __get__(self): return self.thisptr.OldAgeThreshold
+        def __set__(self, OldAgeThreshold): self.thisptr.OldAgeThreshold = OldAgeThreshold
         
     property OldAgePenalty:
         def __get__(self): return self.thisptr.OldAgePenalty
         def __set__(self, OldAgePenalty): self.thisptr.OldAgePenalty = OldAgePenalty
         
-    property DetectCompetetiveCoevolutionStagnation:
-        def __get__(self): return self.thisptr.DetectCompetetiveCoevolutionStagnation
-        def __set__(self, DetectCompetetiveCoevolutionStagnation): self.thisptr.DetectCompetetiveCoevolutionStagnation = DetectCompetetiveCoevolutionStagnation
+    property DetectCompetitiveCoevolutionStagnation:
+        def __get__(self): return self.thisptr.DetectCompetitiveCoevolutionStagnation
+        def __set__(self, DetectCompetitiveCoevolutionStagnation): self.thisptr.DetectCompetitiveCoevolutionStagnation = DetectCompetitiveCoevolutionStagnation
         
     property KillWorstSpeciesEach:
         def __get__(self): return self.thisptr.KillWorstSpeciesEach
@@ -156,13 +156,13 @@ cdef class Parameters:
         def __get__(self): return self.thisptr.DeltaCoding
         def __set__(self, DeltaCoding): self.thisptr.DeltaCoding = DeltaCoding
         
-    property SimplifyingPhaseMPCTreshold:
-        def __get__(self): return self.thisptr.SimplifyingPhaseMPCTreshold
-        def __set__(self, SimplifyingPhaseMPCTreshold): self.thisptr.SimplifyingPhaseMPCTreshold = SimplifyingPhaseMPCTreshold
+    property SimplifyingPhaseMPCThreshold:
+        def __get__(self): return self.thisptr.SimplifyingPhaseMPCThreshold
+        def __set__(self, SimplifyingPhaseMPCThreshold): self.thisptr.SimplifyingPhaseMPCThreshold = SimplifyingPhaseMPCThreshold
         
-    property SimplifyingPhaseStagnationTreshold:
-        def __get__(self): return self.thisptr.SimplifyingPhaseStagnationTreshold
-        def __set__(self, SimplifyingPhaseStagnationTreshold): self.thisptr.SimplifyingPhaseStagnationTreshold = SimplifyingPhaseStagnationTreshold
+    property SimplifyingPhaseStagnationThreshold:
+        def __get__(self): return self.thisptr.SimplifyingPhaseStagnationThreshold
+        def __set__(self, SimplifyingPhaseStagnationThreshold): self.thisptr.SimplifyingPhaseStagnationThreshold = SimplifyingPhaseStagnationThreshold
         
     property ComplexityFloorGenerations:
         def __get__(self): return self.thisptr.ComplexityFloorGenerations
@@ -180,9 +180,9 @@ cdef class Parameters:
         def __get__(self): return self.thisptr.NoveltySearch_Dynamic_Pmin
         def __set__(self, NoveltySearch_Dynamic_Pmin): self.thisptr.NoveltySearch_Dynamic_Pmin = NoveltySearch_Dynamic_Pmin
         
-    property NoveltySearch_No_Archiving_Stagnation_Treshold:
-        def __get__(self): return self.thisptr.NoveltySearch_No_Archiving_Stagnation_Treshold
-        def __set__(self, NoveltySearch_No_Archiving_Stagnation_Treshold): self.thisptr.NoveltySearch_No_Archiving_Stagnation_Treshold = NoveltySearch_No_Archiving_Stagnation_Treshold
+    property NoveltySearch_No_Archiving_Stagnation_Threshold:
+        def __get__(self): return self.thisptr.NoveltySearch_No_Archiving_Stagnation_Threshold
+        def __set__(self, NoveltySearch_No_Archiving_Stagnation_Threshold): self.thisptr.NoveltySearch_No_Archiving_Stagnation_Threshold = NoveltySearch_No_Archiving_Stagnation_Threshold
         
     property NoveltySearch_Pmin_lowering_multiplier:
         def __get__(self): return self.thisptr.NoveltySearch_Pmin_lowering_multiplier
@@ -436,17 +436,17 @@ cdef class Parameters:
         def __get__(self): return self.thisptr.ActivationFunctionDiffCoeff
         def __set__(self, ActivationFunctionDiffCoeff): self.thisptr.ActivationFunctionDiffCoeff = ActivationFunctionDiffCoeff
         
-    property CompatTreshold:
-        def __get__(self): return self.thisptr.CompatTreshold
-        def __set__(self, CompatTreshold): self.thisptr.CompatTreshold = CompatTreshold
+    property CompatThreshold:
+        def __get__(self): return self.thisptr.CompatThreshold
+        def __set__(self, CompatThreshold): self.thisptr.CompatThreshold = CompatThreshold
         
-    property MinCompatTreshold:
-        def __get__(self): return self.thisptr.MinCompatTreshold
-        def __set__(self, MinCompatTreshold): self.thisptr.MinCompatTreshold = MinCompatTreshold
+    property MinCompatThreshold:
+        def __get__(self): return self.thisptr.MinCompatThreshold
+        def __set__(self, MinCompatThreshold): self.thisptr.MinCompatThreshold = MinCompatThreshold
         
-    property CompatTresholdModifier:
-        def __get__(self): return self.thisptr.CompatTresholdModifier
-        def __set__(self, CompatTresholdModifier): self.thisptr.CompatTresholdModifier = CompatTresholdModifier
+    property CompatThresholdModifier:
+        def __get__(self): return self.thisptr.CompatThresholdModifier
+        def __set__(self, CompatThresholdModifier): self.thisptr.CompatThresholdModifier = CompatThresholdModifier
         
     property CompatTreshChangeInterval_Generations:
         def __get__(self): return self.thisptr.CompatTreshChangeInterval_Generations
@@ -473,7 +473,7 @@ cdef class Parameters:
         def __set__(self, VarianceThreshold): self.thisptr.VarianceThreshold = VarianceThreshold
 
     property BandThreshold:
-        '''Used for Band prunning.'''
+        '''Used for Band pruning.'''
         def __get__(self): return self.thisptr.BandThreshold
         def __set__(self, BandThreshold): self.thisptr.BandThreshold = BandThreshold
         

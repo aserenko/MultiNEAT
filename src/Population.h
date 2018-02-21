@@ -262,7 +262,7 @@ public:
     Genome* Tick(Genome& a_deleted_genome);
 
     // Takes an individual and puts it in its apropriate species
-    // Useful in realtime when the compatibility treshold changes
+    // Useful in realtime when the compatibility threshold changes
     void ReassignSpecies(unsigned int a_genome_idx);
 
     unsigned int m_NumEvaluations;

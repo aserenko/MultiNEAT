@@ -1236,7 +1236,7 @@ namespace NEAT
         std::vector<LinkGene>::iterator t_g2;
 
         // this variable is the total distance between the genomes
-        // if it passes beyond the compatibility treshold, the function returns false
+        // if it passes beyond the compatibility threshold, the function returns false
         double t_total_distance = 0.0;
 
         double t_total_weight_difference = 0.0;
@@ -1441,7 +1441,7 @@ namespace NEAT
 
         double t_total_distance = CompatibilityDistance(a_G, a_Parameters);
 
-        if (t_total_distance <= a_Parameters.CompatTreshold)
+        if (t_total_distance <= a_Parameters.CompatThreshold)
             return true;  // compatible
         else
             return false; // incompatible

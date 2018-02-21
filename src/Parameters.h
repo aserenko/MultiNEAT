@@ -84,7 +84,7 @@ public:
     // Allow clones or nearly identical genomes to exist simultaneously in the population.
     // This is useful for non-deterministic environments,
     // as the same individual will get more than one chance to prove himself, also
-    // there will be more chances the same individual to mutate in different ways.
+    // there will be more chances for the same individual to mutate in different ways.
     // The drawback is greatly increased time for reproduction. If you want to
     // search quickly, yet less efficient, leave this to true.
     bool AllowClones;
@@ -108,8 +108,8 @@ public:
     // GA Parameters
     ////////////////////////////////
 
-    // AgeGens treshold, meaning if a species is below it, it is considered young
-    unsigned int YoungAgeTreshold;
+    // AgeGens threshold, meaning if a species is below it, it is considered young
+    unsigned int YoungAgeThreshold;
 
     // Fitness boost multiplier for young species (1.0 means no boost)
     // Make sure it is >= 1.0 to avoid confusion
@@ -123,15 +123,15 @@ public:
     double StagnationDelta;
 
     // AgeGens threshold, meaning if a species if above it, it is considered old
-    unsigned int OldAgeTreshold;
+    unsigned int OldAgeThreshold;
 
     // Multiplier that penalizes old species.
     // Make sure it is < 1.0 to avoid confusion.
     double OldAgePenalty;
 
-    // Detect competetive coevolution stagnation
+    // Detect competitive coevolution stagnation
     // This kills the worst species of age >N (each X generations)
-    bool DetectCompetetiveCoevolutionStagnation;
+    bool DetectCompetitiveCoevolutionStagnation;
 
     // Each X generation..
     int KillWorstSpeciesEach;
@@ -178,10 +178,10 @@ public:
     bool DeltaCoding;
 
     // What is the MPC + base MPC needed to begin simplifying phase
-    unsigned int SimplifyingPhaseMPCTreshold;
+    unsigned int SimplifyingPhaseMPCThreshold;
 
     // How many generations of global stagnation should have passed to enter simplifying phase
-    unsigned int SimplifyingPhaseStagnationTreshold;
+    unsigned int SimplifyingPhaseStagnationThreshold;
 
     // How many generations of MPC stagnation are needed to turn back on complexifying
     unsigned int ComplexityFloorGenerations;
@@ -194,7 +194,7 @@ public:
     // the K constant
     unsigned int NoveltySearch_K;
 
-    // Sparseness treshold. Add to the archive if above
+    // Sparseness threshold. Add to the archive if above
     double NoveltySearch_P_min;
 
     // Dynamic Pmin?
@@ -202,7 +202,7 @@ public:
 
     // How many evaluations should pass without adding to the archive
     // in order to lower Pmin
-    unsigned int NoveltySearch_No_Archiving_Stagnation_Treshold;
+    unsigned int NoveltySearch_No_Archiving_Stagnation_Threshold;
 
     // How should it be multiplied (make it less than 1.0)
     double NoveltySearch_Pmin_lowering_multiplier;
@@ -368,19 +368,19 @@ public:
     // Activation function type difference importance
     double ActivationFunctionDiffCoeff;
 
-    // Compatibility treshold
-    double CompatTreshold;
+    // Compatibility threshold
+    double CompatThreshold;
 
-    // Minumal value of the compatibility treshold
-    double MinCompatTreshold;
+    // Minumal value of the compatibility threshold
+    double MinCompatThreshold;
 
     // Modifier per generation for keeping the species stable
-    double CompatTresholdModifier;
+    double CompatThresholdModifier;
 
-    // Per how many generations to change the treshold
+    // Per how many generations to change the threshold
     unsigned int CompatTreshChangeInterval_Generations;
 
-    // Per how many evaluations to change the treshold
+    // Per how many evaluations to change the threshold
     unsigned int CompatTreshChangeInterval_Evaluations;
     
     /////////////////////////////
@@ -400,7 +400,7 @@ public:
 
     double VarianceThreshold;
 
-    // Used for Band prunning.
+    // Used for Band pruning.
     double BandThreshold;
 
     // Max and Min Depths of the quadtree
@@ -814,13 +814,13 @@ public:
         ar & InnovationsForever;
         ar & AllowClones;
         ar & NormalizeGenomeSize;
-        ar & YoungAgeTreshold;
+        ar & YoungAgeThreshold;
         ar & YoungAgeFitnessBoost;
         ar & SpeciesMaxStagnation;
         ar & StagnationDelta;
-        ar & OldAgeTreshold;
+        ar & OldAgeThreshold;
         ar & OldAgePenalty;
-        ar & DetectCompetetiveCoevolutionStagnation;
+        ar & DetectCompetitiveCoevolutionStagnation;
         ar & KillWorstSpeciesEach;
         ar & KillWorstAge;
         ar & SurvivalRate;
@@ -831,13 +831,13 @@ public:
         ar & RouletteWheelSelection;
         ar & PhasedSearching;
         ar & DeltaCoding;
-        ar & SimplifyingPhaseMPCTreshold;
-        ar & SimplifyingPhaseStagnationTreshold;
+        ar & SimplifyingPhaseMPCThreshold;
+        ar & SimplifyingPhaseStagnationThreshold;
         ar & ComplexityFloorGenerations;
         ar & NoveltySearch_K;
         ar & NoveltySearch_P_min;
         ar & NoveltySearch_Dynamic_Pmin;
-        ar & NoveltySearch_No_Archiving_Stagnation_Treshold;
+        ar & NoveltySearch_No_Archiving_Stagnation_Threshold;
         ar & NoveltySearch_Pmin_lowering_multiplier;
         ar & NoveltySearch_Pmin_min;
         ar & NoveltySearch_Quick_Archiving_Min_Evaluations;
@@ -906,9 +906,9 @@ public:
         ar & TimeConstantDiffCoeff;
         ar & BiasDiffCoeff;
         ar & ActivationFunctionDiffCoeff;
-        ar & CompatTreshold;
-        ar & MinCompatTreshold;
-        ar & CompatTresholdModifier;
+        ar & CompatThreshold;
+        ar & MinCompatThreshold;
+        ar & CompatThresholdModifier;
         ar & CompatTreshChangeInterval_Generations;
         ar & CompatTreshChangeInterval_Evaluations;
         
